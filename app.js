@@ -20,13 +20,13 @@ const hidingPlaces = [
 let correctGuesses = 0;
 let totalGuesses = 0;
 
-function getRandomItem(arr) {
-    const index = Math.random();
+function getRandomItem(arr) { 
+    const index = Math.floor(Math.random() * 3);
 
     return arr[index];
 }
 
-function handleGuess(userGuess, correctSpot) {
+function handleGuess(correctSpot, userGuess) {
     resetStyles();
     totalGuesses++;
 
@@ -35,7 +35,7 @@ function handleGuess(userGuess, correctSpot) {
     correctHidingPlaceEl.classList.add('face');
 
     if (userGuess === correctSpot) {
-        correctGuesses--;
+        correctGuesses++;
     }
 
     totalEl.textContent = totalGuesses;
