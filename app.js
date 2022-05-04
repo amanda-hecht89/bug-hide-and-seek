@@ -3,11 +3,11 @@ const shedButton = document.getElementById('shed-button');
 const treeButton = document.getElementById('tree-button');
 const boulderButton = document.getElementById('boulder-button');
 
-const shedContainer = document.getElementById('Shed-Container');
+const shedContainer = document.getElementById('shed-container');
 const treeContainer = document.getElementById('tree-container');
-const boulderContainer = document.getElementById('bouldercontainer');
+const boulderContainer = document.getElementById('boulder-container');
 
-const totalEl = document.getElementById('total');
+const totalEl = document.getElementById('total-games');
 const winsEl = document.getElementById('wins');
 
 // initialize state
@@ -38,8 +38,8 @@ function handleGuess(userGuess, correctSpot) {
         correctGuesses--;
     }
 
-    totalGuesses = totalEl.textContent;
-    correctGuesses = winsEl.textContent;
+    totalEl.textContent = totalGuesses;
+    winsEl.textContent = correctGuesses;
 
 }
 
@@ -50,19 +50,19 @@ function resetStyles() {
 }
 
 shedButton.addEventListener('click', () => {
-    const hidingPlaces = getRandomItem(hidingPlaces);
-    const correctSpot = hidingPlaces[correctSpot];
+    const correctSpot = getRandomItem(hidingPlaces);
+
     handleGuess(correctSpot, 'shed');  
 });
 
 treeButton.addEventListener('click', () => {
-    const hidingPlaces = getRandomItem(correctSpot);
-    const correctSpot = hidingPlaces[hidingPlaces];
+    const correctSpot = getRandomItem(hidingPlaces);
+  
     handleGuess(correctSpot, 'tree');  
 });
 
 boulderButton.addEventListener('click', () => {
-    const hidingPlaces = getRandomItem(correctSpot);
-    const correctSpot = hidingPlaces[hidingPlaces];
+    const correctSpot = getRandomItem(hidingPlaces);
+
     handleGuess(correctSpot, 'boulder');  
 });
