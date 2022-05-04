@@ -11,9 +11,9 @@ const winsEl = document.getElementById('wins');
 
 // initialize state
 const hidingPlaces = [
-    'tree'
-    'shed'
-    'boulder'
+    'tree',
+    'shed',
+    'boulder',
 ];
 
 let correctGuesses = 0;
